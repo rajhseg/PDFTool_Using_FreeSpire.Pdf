@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Spire.Pdf">
-      <HintPath>D:\Chrome Extn\976ff887acb825171de6-b7373c67a77811ef13eee448ce370e16a20f23a5\976ff887acb825171de6-b7373c67a77811ef13eee448ce370e16a20f23a5\temp\lib\net48\Spire.Pdf.dll</HintPath>
+      <HintPath>D:\lib\net48\Spire.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
