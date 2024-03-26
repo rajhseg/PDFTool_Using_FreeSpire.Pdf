@@ -5,7 +5,6 @@ This repo consists of an examples for FreeSpire.pdf community version, codes for
 
  -> You can use this code to build your utility.
 
- Please see the sample pages below.
 
  
 
