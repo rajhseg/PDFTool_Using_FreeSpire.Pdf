@@ -61,7 +61,7 @@ namespace PDFTextEdit
                 	PdfTextReplacer replacer = new PdfTextReplacer(page);
                 	PdfTextReplaceOptions options = new PdfTextReplaceOptions();
                 	
-                	options.ReplaceType = PdfTextReplaceOptions.ReplaceActionType.WholeWord;                	
+                	options.ReplaceType = PdfTextReplaceOptions.ReplaceActionType.IgnoreCase;                	
                 	replacer.Options = options;                	
                 	replacer.ReplaceAllText(word.Key, word.Value);                	 
                 }  
