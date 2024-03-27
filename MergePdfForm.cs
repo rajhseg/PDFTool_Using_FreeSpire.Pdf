@@ -67,7 +67,7 @@ namespace PDFTextEdit
 		
 		void MergePdfFormLoad(object sender, EventArgs e)
 		{
-			listView1.Columns.Add("File Path",200, HorizontalAlignment.Left);
+			//listView1.Columns.Add("File Path",200, HorizontalAlignment.Left);
 			
 			foreach (ColumnHeader element in listView1.Columns) {
 				element.Width = -1;

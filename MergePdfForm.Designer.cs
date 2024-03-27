@@ -78,7 +78,7 @@ namespace PDFTextEdit
 			// columnHeader1
 			// 
 			this.columnHeader1.Text = "Files";
-			this.columnHeader1.Width = 200;
+			this.columnHeader1.Width = 400;
 			// 
 			// button2
 			// 

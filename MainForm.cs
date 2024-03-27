@@ -145,5 +145,11 @@ namespace PDFTextEdit
 			SplitPdfForm splitForm = new SplitPdfForm();
 			splitForm.ShowDialog();
 		}
+		
+		void Button5Click(object sender, EventArgs e)
+		{
+			FindTextAndHighlight obj =new FindTextAndHighlight();
+			obj.ShowDialog();
+		}
 	}
 }

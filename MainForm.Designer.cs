@@ -42,6 +42,7 @@ namespace PDFTextEdit
 			this.button3 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button5 = new System.Windows.Forms.Button();
 			this.button7 = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
@@ -141,6 +142,7 @@ namespace PDFTextEdit
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.button5);
 			this.groupBox1.Controls.Add(this.button7);
 			this.groupBox1.Controls.Add(this.button6);
 			this.groupBox1.Location = new System.Drawing.Point(55, 198);
@@ -150,9 +152,19 @@ namespace PDFTextEdit
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Other options";
 			// 
+			// button5
+			// 
+			this.button5.Location = new System.Drawing.Point(293, 19);
+			this.button5.Name = "button5";
+			this.button5.Size = new System.Drawing.Size(130, 23);
+			this.button5.TabIndex = 2;
+			this.button5.Text = "Find Text and Highlight";
+			this.button5.UseVisualStyleBackColor = true;
+			this.button5.Click += new System.EventHandler(this.Button5Click);
+			// 
 			// button7
 			// 
-			this.button7.Location = new System.Drawing.Point(261, 19);
+			this.button7.Location = new System.Drawing.Point(160, 19);
 			this.button7.Name = "button7";
 			this.button7.Size = new System.Drawing.Size(118, 23);
 			this.button7.TabIndex = 1;
@@ -162,7 +174,7 @@ namespace PDFTextEdit
 			// 
 			// button6
 			// 
-			this.button6.Location = new System.Drawing.Point(78, 19);
+			this.button6.Location = new System.Drawing.Point(32, 19);
 			this.button6.Name = "button6";
 			this.button6.Size = new System.Drawing.Size(112, 23);
 			this.button6.TabIndex = 0;
@@ -194,6 +206,7 @@ namespace PDFTextEdit
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.GroupBox groupBox1;
