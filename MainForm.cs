@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spire.Pdf;
 using Spire.Pdf.General.Find;
@@ -151,5 +152,44 @@ namespace PDFTextEdit
 			FindTextAndHighlight obj =new FindTextAndHighlight();
 			obj.ShowDialog();
 		}
-	}
+
+        private async void button8_Click(object sender, EventArgs e)
+        {
+            string pdfPath = textBox3.Text;
+
+			if (!string.IsNullOrEmpty(pdfPath))
+			{
+				await Task.Run(() => ConvertPdfToImages(pdfPath));
+            }
+			else 
+			{ 
+				MessageBox.Show("Please select a PDF file first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+        }
+
+        private void ConvertPdfToImages(string pdfPath)
+        {
+            PdfDocument doc = new PdfDocument(pdfPath);
+
+            var resX = !string.IsNullOrEmpty(resolutionX.Text) ? int.Parse(resolutionX.Text) : 300;
+            var resY = !string.IsNullOrEmpty(resolutionY.Text) ? int.Parse(resolutionY.Text) : 300;
+
+            for (int i = 0; i < doc.Pages.Count; i++)
+            {
+                FileInfo fi = new FileInfo(pdfPath);
+                var finame = fi.Name.Substring(0, fi.Name.LastIndexOf('.'));
+                var img = doc.SaveAsImage(i, Spire.Pdf.Graphics.PdfImageType.Bitmap, resX, resY);
+                img.Save(Path.Combine(Path.GetDirectoryName(pdfPath), $"{finame}_Page_{i + 1}.png"), System.Drawing.Imaging.ImageFormat.Png);
+            }
+
+            MessageBox.Show("PDF pages converted to images successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+			ImagesToPdf imagesToPdf = new ImagesToPdf();
+            imagesToPdf.ShowDialog();
+        }
+    }
 }
